@@ -1,7 +1,7 @@
 {{ config(materialized='view') }}
 
 with source as (
-    select * from {{ source('corebank', 'loans') }}
+    select * from LENDING_LOANS
 ),
 
 renamed as (
@@ -18,3 +18,4 @@ renamed as (
 )
 
 select * from renamed
+
