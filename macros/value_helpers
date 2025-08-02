@@ -1,0 +1,7 @@
+{% macro generate_hub_key(natural_key) %}
+    {{ dbt_utils.generate_surrogate_key([natural_key]) }}
+{% endmacro %}
+
+{% macro satellite_columns(columns) %}
+    {{ return(columns | join(', ')) }}
+{% endmacro %}
