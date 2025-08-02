@@ -6,4 +6,5 @@ select
     u.outstanding_balance,
     round((u.outstanding_balance / u.credit_limit)::numeric, 2) as utilization_ratio,
     u.utilization_month
-from {{ source('corebank', 'credit_utilization') }} u
+from credit_utilization u
+
