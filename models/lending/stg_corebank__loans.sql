@@ -1,7 +1,7 @@
 {{ config(materialized='view') }}
 
 with source as (
-    select * from {{ source('corebank', 'loans') }}
+    select * from lending_loans
 ),
 
 renamed as (
@@ -14,7 +14,7 @@ renamed as (
         disbursement_date,
         maturity_date,
         status
-    from lending_loans
+    from source
 )
 
 select * from renamed
