@@ -4,15 +4,49 @@ models:
     - name: stg_corebank_loans
       description: "A starter dbt model"
       columns:
-          - name: loanid
+          - name: loan_id
             description: "The primary key for this table"
             tests:
                 - unique
-
     - name: hub_loan
       description: "A starter dbt model"
       columns:
-          - name: loanid
+          - name: loan_hk
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: sat_loan_terms
+      description: "A starter dbt model"
+      columns:
+          - name: loan_hk
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: bv_loan_summary
+      description: "A starter dbt model"
+      columns:
+          - name: loan_hk
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: dim_loan
+      description: "A starter dbt model"
+      columns:
+          - name: loan_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: fct_credit_utilization
+      description: "A starter dbt model"
+      columns:
+          - name: customer_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: fct_loan_repayments
+      description: "A starter dbt model"
+      columns:
+          - name: repayment_id
             description: "The primary key for this table"
             tests:
                 - unique
