@@ -10,6 +10,7 @@ select
     {{ dbt_utils.generate_surrogate_key(['loan_id', 'interest_rate', 'principal_amount']) }} as hashdiff,
     current_timestamp as load_date,
     '{{ invocation_id }}' as record_source
-from {{ ref('stg_corebank__loans') }}
+from {{ ref('stg_corebank_loans') }}
+
 
 
