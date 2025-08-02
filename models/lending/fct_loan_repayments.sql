@@ -8,4 +8,5 @@ select
     r.principal_component,
     r.interest_component,
     current_timestamp as load_date
-from {{ source('corebank', 'loan_repayments') }} r
+from loan_repayments r
+
