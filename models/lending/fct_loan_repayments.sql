@@ -8,6 +8,7 @@ select
     r.principal_component,
     r.interest_component,
     current_timestamp as load_date
-from loan_payments r
+from loan_payment r
+
 
 
