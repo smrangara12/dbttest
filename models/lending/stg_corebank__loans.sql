@@ -1,11 +1,7 @@
 {{ config(materialized='view') }}
 
 with source as (
-<<<<<<< HEAD
     select * from lending_loans
-=======
-    select * from LENDING_LOANS
->>>>>>> d5351df8a9241cbb3135570ed7c407fce9dd3539
 ),
 
 renamed as (
