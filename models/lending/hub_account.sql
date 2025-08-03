@@ -1,0 +1,8 @@
+{{ config(materialized='incremental') }}
+
+select
+    {{ dbt_utils.generate_surrogate_key(['account_id']) }} as account_hk,
+    account_id,
+    current_timestamp as load_date,
+    'deposit_source' as record_source
+from {{ ref('stg_corebank_deposits') }}
