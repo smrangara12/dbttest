@@ -1,34 +1,32 @@
 version: 2
 
 models:
-     name: stg_corebank_loans
+    - name: bridge_account_customer
       description: "A starter dbt model"
       columns:
-          - name: loan_id
+          - name: account_hk
             description: "The primary key for this table"
-            tests:
-                - unique
-     name: stg_corebank_loans
+          - name: customer_hk
+            description: "The primary key for this table"
+      tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - account_hk
+            - customer_hk
+    - name: Create bridge_loan_customer
       description: "A starter dbt model"
       columns:
-          - name: loan_id
+          - name: loan_hk
             description: "The primary key for this table"
-            tests:
-                - unique
-     name: stg_corebank_loans
-      description: "A starter dbt model"
-      columns:
-          - name: loan_id
+          - name: customer_hk
             description: "The primary key for this table"
-            tests:
-                - unique
-       name: stg_corebank_loans
-      description: "A starter dbt model"
-      columns:
-          - name: loan_id
-            description: "The primary key for this table"
-            tests:
-                - unique
+          
+      tests:
+       - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - loan_hk
+            - customer_hk
+            
     - name: stg_corebank_loans
       description: "A starter dbt model"
       columns:
@@ -36,38 +34,38 @@ models:
             description: "The primary key for this table"
             tests:
                 - unique
-    - name: hub_loan
+    - name: dim_account
       description: "A starter dbt model"
       columns:
-          - name: loan_hk
+          - name: account_key
             description: "The primary key for this table"
             tests:
                 - unique
-    - name: sat_loan_terms
+    - name: dim_customer
       description: "A starter dbt model"
       columns:
-          - name: loan_hk
-            description: "The primary key for this table"
-            tests:
-                - unique
-    - name: stg_corebank_loans
-      description: "A starter dbt model"
-      columns:
-          - name: loan_id
-            description: "The primary key for this table"
-            tests:
-                - unique    
-    - name: bv_loan_summary
-      description: "A starter dbt model"
-      columns:
-          - name: loan_hk
+          - name: customer_key
             description: "The primary key for this table"
             tests:
                 - unique
     - name: dim_loan
       description: "A starter dbt model"
       columns:
-          - name: loan_id
+          - name: loan_key
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: fact_deposit
+      description: "A starter dbt model"
+      columns:
+          - name: fact_key
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: fact_loan_origination
+      description: "A starter dbt model"
+      columns:
+          - name: fact_key
             description: "The primary key for this table"
             tests:
                 - unique
@@ -85,4 +83,66 @@ models:
             description: "The primary key for this table"
             tests:
                 - unique
-
+    - name: hub_loan
+      description: "A starter dbt model"
+      columns:
+          - name: loan_hk
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: link_account_customer
+      description: "A starter dbt model"
+      columns:
+          - name: account_customer_link_hk
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: link_loan_customer
+      description: "A starter dbt model"
+      columns:
+          - name: loan_customer_link_hk
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: pit_account
+      description: "A starter dbt model"
+      columns:
+          - name: account_hk
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: pit_loan
+      description: "A starter dbt model"
+      columns:
+          - name: loan_hk
+            description: "The primary key for this table"
+            tests:
+                - unique    
+    - name: sat_account_balance
+      description: "A starter dbt model"
+      columns:
+          - name: account_hk
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: sat_loan_details
+      description: "A starter dbt model"
+      columns:
+          - name: loan_hk
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: sat_loan_terms
+      description: "A starter dbt model"
+      columns:
+          - name: loan_hk
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: bv_loan_summary
+      description: "A starter dbt model"
+      columns:
+          - name: loan_hk
+            description: "The primary key for this table"
+            tests:
+                - unique
