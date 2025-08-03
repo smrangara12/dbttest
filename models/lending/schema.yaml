@@ -1,6 +1,34 @@
 version: 2
 
 models:
+     name: stg_corebank_loans
+      description: "A starter dbt model"
+      columns:
+          - name: loan_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+     name: stg_corebank_loans
+      description: "A starter dbt model"
+      columns:
+          - name: loan_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+     name: stg_corebank_loans
+      description: "A starter dbt model"
+      columns:
+          - name: loan_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+       name: stg_corebank_loans
+      description: "A starter dbt model"
+      columns:
+          - name: loan_id
+            description: "The primary key for this table"
+            tests:
+                - unique
     - name: stg_corebank_loans
       description: "A starter dbt model"
       columns:
@@ -22,6 +50,13 @@ models:
             description: "The primary key for this table"
             tests:
                 - unique
+    - name: stg_corebank_loans
+      description: "A starter dbt model"
+      columns:
+          - name: loan_id
+            description: "The primary key for this table"
+            tests:
+                - unique    
     - name: bv_loan_summary
       description: "A starter dbt model"
       columns:
@@ -50,3 +85,4 @@ models:
             description: "The primary key for this table"
             tests:
                 - unique
+
