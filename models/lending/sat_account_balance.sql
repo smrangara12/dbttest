@@ -2,7 +2,7 @@
 
 select
     {{ dbt_utils.generate_surrogate_key(['account_id']) }} as account_hk,
-    {{ dbt_utils.generate_surrogate_key(['account_id', 'balance', 'account_type']) }} as account_hashdiff,
+    {{ dbt_utils.generate_surrogate_key(['account_id', 'balance', 'deposit_type']) }} as account_hashdiff,
     balance,
     deposit_type,
     current_timestamp as load_date,
