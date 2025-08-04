@@ -1,5 +1,4 @@
 version: 2
-
 models:
     - name: bridge_account_customer
       description: "A starter dbt model"
@@ -13,7 +12,7 @@ models:
           combination_of_columns:
             - account_hk
             - customer_hk
-    - name: Create bridge_loan_customer
+    - name: bridge_loan_customer
       description: "A starter dbt model"
       columns:
           - name: loan_hk
@@ -146,3 +145,4 @@ models:
             description: "The primary key for this table"
             tests:
                 - unique
+
