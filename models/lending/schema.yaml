@@ -25,7 +25,13 @@ models:
           combination_of_columns:
             - loan_hk
             - customer_hk
-            
+    - name: dim_customer_base
+      description: "A starter dbt model"
+      columns:
+          - name: customer_key
+            description: "The primary key for this table"
+            tests:
+                - unique        
     - name: stg_corebank_loans
       description: "A starter dbt model"
       columns:
@@ -149,13 +155,6 @@ models:
       description: "A starter dbt model"
       columns:
           - name: loan_hk
-            description: "The primary key for this table"
-            tests:
-                - unique
-    - name: dim_customer_base
-      description: "A starter dbt model"
-      columns:
-          - name: customer_key
             description: "The primary key for this table"
             tests:
                 - unique
