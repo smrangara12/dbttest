@@ -1,5 +1,19 @@
 version: 2
 models:
+    - name: stg_corebank_loans
+      description: "A starter dbt model"
+      columns:
+          - name: loan_id
+            description: "The primary key for this table"
+            tests:
+                - unique
+    - name: stg_corebank_deposits
+      description: "A starter dbt model"
+      columns:
+          - name: Account_id
+            description: "The primary key for this table"
+            tests:
+                - unique
     - name: bridge_account_customer
       description: "A starter dbt model"
       columns:
@@ -32,20 +46,6 @@ models:
             description: "The primary key for this table"
             tests:
                 - unique        
-    - name: stg_corebank_loans
-      description: "A starter dbt model"
-      columns:
-          - name: loan_id
-            description: "The primary key for this table"
-            tests:
-                - unique
-    - name: stg_corebank_deposits
-      description: "A starter dbt model"
-      columns:
-          - name: Account_id
-            description: "The primary key for this table"
-            tests:
-                - unique
     - name: dim_account
       description: "A starter dbt model"
       columns:
@@ -158,3 +158,4 @@ models:
             description: "The primary key for this table"
             tests:
                 - unique
+
