@@ -145,4 +145,10 @@ models:
             description: "The primary key for this table"
             tests:
                 - unique
-
+    - name: dim_customer_base
+      description: "A starter dbt model"
+      columns:
+          - name: customer_key
+            description: "The primary key for this table"
+            tests:
+                - unique
