@@ -161,7 +161,7 @@ models:
     - name: hub_account
       description: "A starter dbt model"
       columns:
-    - name: account_hk
+          - name: account_hk
             description: "The primary key for this table"
             tests:
                 - unique
