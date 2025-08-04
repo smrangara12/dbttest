@@ -5,4 +5,4 @@ select
     last_name,
     birth_date,
     customer_type
-from {{ ref('dim_customer_base') }}
+from DIM_CUSTOMER_BASE
