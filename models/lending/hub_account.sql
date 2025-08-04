@@ -5,4 +5,4 @@ select
     account_id,
     current_timestamp as load_date,
     'deposit_source' as record_source
-from {{ ref('stg_corebank_deposits') }}
+from STG_COREBANK_DEPOSITS
