@@ -155,7 +155,7 @@ models:
     - name: stg_corebank_deposits
       description: "A starter dbt model"
       columns:
-          - name: customer_key
+          - name: Account_id
             description: "The primary key for this table"
             tests:
                 - unique
